@@ -7,31 +7,24 @@ import javax.persistence.Table;
 @Table(name = "book_availability")
 public class BookAvailabilityView {
 
-  @Column(name = "book_title")
+   @Column(name = "book_id")
+  private Long bookId; 
+  
+  @Column(name = "title")
   private String bookTitle;
 
-  @Column(name = "edition")
-  private String edition;
-
-  @Enumerated(EnumType.STRING)
-  @Column(name = "format")
-  private BookFormat format;
-
-  @Column(name = "status")
-  private String status;
-
-  @Column(name = "location")
-  private String location;
+  @Column(name = "available_copies")
+  private int availableCopies;
 
   public BookAvailabilityView() {
   }
 
   public Long getId() {
-    return id;
+    return bookId;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setId(Long bookId) {
+    this.bookId = bookId;
   }
 
   public String getBookTitle() {
@@ -42,35 +35,12 @@ public class BookAvailabilityView {
     this.bookTitle = bookTitle;
   }
 
-  public String getEdition() {
-    return edition;
+  public String getAvailableCopies() {
+    return availableCopies;
   }
 
-  public void setEdition(String edition) {
-    this.edition = edition;
+  public void setAvailableCopies(String availableCopies) {
+    this.availableCopies = availableCopies;
   }
 
-  public BookFormat getFormat() {
-    return format;
-  }
-
-  public void setFormat(BookFormat format) {
-    this.format = format;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public String getLocation() {
-    return location;
-  }
-
-  public void setLocation(String location) {
-    this.location = location;
-  }
 }
